@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Topics</title>
+</head>
+<body>
+    <div>
+        <h2>Js Topics</h2>
+        <input type="text" name="calcVal1" id="calcVal1"/>
+        <input type="text" name="calcVal2" id="calcVal2"/>
+        <br><br>
+        <button type="button" onclick="calc('add')">ADD</button>
+        <button type="button" onclick="calc('sub')">SUB</button>
+        <button type="button" onclick="calc('mul')">MUL</button>
+        <button type="button" onclick="calc('div')">DIV</button>
+        <div>
+            <h3>Switch</h3>
+            <script>
+                function calc(action){
+
+                    let val1 = Number(document.getElementById('calcVal1').value);                    
+                    let val2 = Number(document.getElementById('calcVal2').value);
+                    let result = 0;
+
+                    switch(action){
+
+                        case 'add':
+                            result = val1 + val2;
+                            break;
+                        case 'sub':
+                            result = val1 - val2;
+                            break;
+                        case 'mul':
+                            result = val1 * val2;
+                            break;
+                        case 'div': 
+                            result = val1 / val2;
+                            break;
+                        default: 
+                            result = "Invalid Option";                            
+                    }
+                    alert(result);
+                }
+            </script>
+        </div>
+        <div>
+            <h2>Switch System</h2>
+            <div class="home">
+                <div class="mainSw" id="mainSw"></div>
+                <p class="light" id="l1"></p>
+                <p class="fan" id="fan"></p>
+                <p class="light light2" id="l2"></p>
+                <p class="tv" id="tv"></p>
+                
+                <div>
+                    <button type="button" onclick="l1SwOnOff()">L1</button>
+                    <button type="button" onclick="l2SwOnOff()">L2</button>
+                    <button type="button" onclick="fanSwOnOff()">Fan</button>
+                    <button type="button" onclick="tvSwOnOff()">Tv</button>
+                    <button type="button" onclick="mainSwOnOff()">Main</button>
+                </div>
+            </div>
+            <script>
+                var mainSw = false;
+                var l1Sw = false;
+                var l2Sw = false;
+                var fanSw = false;
+                var tvSw = false;
+                var l1 = "";
+                var l2 = "";
+                var fan = "";
+                var tv = "";
+                var main = "";
+e
+                function getApp(){
+                    l1 = document.getElementById('l1');
+                    l2 = document.getElementById('l2');
+                    fan = document.getElementById('fan');
+                    tv = document.getElementById('tv');
+                    main = document.getElementById('mainSw');
+                }
+
+                function mainSwOnOff(){
+                    getApp();
+                    mainSw = !mainSw;
+                    if(mainSw){
+                        main.style.backgroundColor = "green";
+                        if(l1Sw)
+                            l1.style.backgroundColor = "green";
+                        if(l2Sw)
+                            l2.style.backgroundColor = "green";
+                        if(fanSw)
+                            fan.style.backgroundColor = "green";
+                        if(tvSw)
+                            tv.style.backgroundColor = "green";
+                    }                   
+                    else{
+                        main.style.backgroundColor = "red";
+                        l1.style.backgroundColor = "grey";
+                        l2.style.backgroundColor = "grey";
+                        fan.style.backgroundColor = "grey";
+                        tv.style.backgroundColor = "grey";
+                    }
+                }
+                
+
+                function l1SwOnOff(){
+                    getApp();
+                    l1Sw = !l1Sw;
+                    // if(l1Sw == true)
+                    // { 
+                    //     l1Sw = false
+                    // }
+                    // else{ 
+                    //     l1Sw = true
+                    // }
+
+                    if(l1Sw && mainSw){
+                        l1.style.backgroundColor = "green";
+                    }else{
+                        l1.style.backgroundColor = "grey";
+                    }
+                }
+                function l2SwOnOff(){
+                    getApp();
+                    l2Sw = !l2Sw;
+                    if(l2Sw && mainSw){
+                        l2.style.backgroundColor = "green";
+                    }else{
+                        l2.style.backgroundColor = "grey";
+                    }
+                }
+                function fanSwOnOff(){
+                    getApp();
+                    fanSw = !fanSw;
+                    if(fanSw && mainSw){
+                        fan.style.backgroundColor = "green";
+                    }else{
+                        fan.style.backgroundColor = "grey";
+                    }
+                }
+                function tvSwOnOff(){
+                    getApp();
+                    tvSw = !tvSw;
+                    if(tvSw && mainSw){
+                        tv.style.backgroundColor = "green";
+                    }else{
+                        tv.style.backgroundColor = "grey";
+                    }
+                }
+
+            </script>
+            <style>
+                .home{
+                    width:500px;
+                    height: 350px;
+                    border: 2px solid black;
+                }
+                .fan{
+                    width:50px;
+                    height: 10px;
+                    background-color: grey;
+                    margin-left: 200px;;
+                }
+                .light{
+                    width:10px;
+                    height: 50px;
+                    background-color: grey;
+                }
+                .light2{
+                    float: right;
+                }
+                .tv{
+                    width: 100px;
+                    height: 80px;
+                    background-color: grey;
+                    margin-top:80px;
+                    margin-left: 200px;
+                }
+                .mainSw{
+                    width:100px;
+                    height: 20px;
+                    background-color: grey;
+                    margin-left: 200px;
+                }
+            </style>
+        </div>
+    </div>
+</body>
+</html>

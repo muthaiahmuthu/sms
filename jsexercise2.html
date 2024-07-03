@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+<table>
+    <tr>
+        <td>
+            user name:<input type="text" id="name">
+        </td>
+    </tr>
+    <tr>
+        <td>
+           password: <input type="password" id="pswd">
+        </td>
+    </tr>
+  
+</table>
+
+    </form>
+    <tr>
+        
+        <button  class="btn btn-success" onclick="userDetails()" style="margin-left: 200px;">login</button>
+    </tr>
+
+<script>
+    function userDetails(){
+        let uname = document.getElementById('name').value;
+         let pswd =  document.getElementById('pswd').value;
+          
+         console.log(uname,pswd);
+         window.location.href="./home.html"
+           }
+</script>
+
+</body>
+</html>

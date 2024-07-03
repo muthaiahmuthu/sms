@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <p>
+            <label for="number">Two Digit Number:</label>
+            <input type="number" name="number" id="number" placeholder="12">
+        </p>
+        <p>
+
+            <button type="button" onclick=reverse()>reverse</button>
+        </p>
+    </form>
+
+    <script>
+    function reverse(){
+        let number=Math.floor(document.getElementById("number").value);
+        
+    
+        if(number>=0 && number<=9){
+            console.log(number);
+        }else if(number>=10 && number<=99 ){
+            let temp = number; // 51
+            let result = 0; 
+            result = result*10 + temp%10; // 0*10 + 1
+            temp = Math.floor(temp/10); // 5
+            result = result*10 + temp%10; // 1*10 + 5
+            console.log(result); // 15
+        } else{
+            console.error("Given number is niether single nor two digit number")
+        }
+    }
+    </script>
+</body>
+</html>

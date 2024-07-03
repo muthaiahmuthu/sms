@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- get input from the user and split the 2 digit number and add together to neutrlize to single digit? -->
+       <!-- get  2 digit number from user reverse -->
+        <!-- consider as a switching system in home achive below -->
+         <!-- light1 light2 tv fan main -->
+
+<form>
+    <p>
+        <label for="number">Two Digit Number:</label>
+        <input type="number" name="number" id="number" placeholder="12">
+    </p>
+    <p>
+        <button type="button" onclick=neutralize()>neutralize</button>
+
+    </p>
+</form>
+<script>
+    // const neutralize = ()=>console.log(document.getElementById("number").value
+    //                                                     .split("") //"68"-> ["6","8"]
+    //                                                     .map(i=>Number(i)) // ["6","8"] -> [6,8]
+    //                                                     .reduce((i,j)=>i+j,0) // [6,8] -> 0+6+8 = 14
+    //                                                     .toString() // 14 -> "14" 
+    //                                                     .split("") 
+    //                                                     .map(i=>Number(i))
+    //                                                     .reduce((i,j)=>i+j,0));
+
+    // const reverse = ()=> console.log(parseInt(document.getElementById("number").value
+    //                                                         .split("")
+    //                                                         .reverse()
+    //                                                         .join("")));
+
+    function neutralize(){
+   let number=parseInt(document.getElementById("number").value);
+
+   if(number>=0 && number<=9){
+        console.log(number);
+    }else if(number>=10 && number<=99){
+        let result=0;
+        let temp=number;
+        result+=temp%10;
+        temp=Math.floor(temp/10);
+        result+=temp%10;
+        temp=result;
+        if(number>=0 && number<=99){
+            result=0;
+            result+=temp%10;
+            temp=Math.floor(temp/10);
+            result+=temp%10;
+        }
+        console.log(result);
+
+    }else{
+        console.error("Given number is niether single nor two digit number")
+    }
+
+
+}
+
+
+
+
+
+ 
+
+</script>
+
+</body>
+</html>

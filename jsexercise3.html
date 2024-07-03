@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Example</title>
+</head>
+<body>
+    <div>
+        <h2>Js Example</h2>
+        <div>
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" id="user" name="user"/></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" id="pswd" name="pswd"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" value="Login" onclick="checkLogin()" class="btn"/></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <style>
+        .btn{
+            background-color: rgb(129, 178, 237);
+        }
+    </style>
+    <script>
+        function checkLogin(){
+            let user = document.getElementById('user').value;
+            let pswd = document.getElementById('pswd').value;
+
+            console.log(user, pswd);
+            console.log(document);
+            console.log(document.getElementById('user'));
+            console.log(document.getElementsByName('pswd'));
+            console.log(document.getElementsByClassName('btn'));
+            console.log(document.getElementsByTagName('input'));
+            
+            window.location.href='./svgEx.html';
+        }
+    </script>
+</body>
+</html>

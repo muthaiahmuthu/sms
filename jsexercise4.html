@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Topics</title>
+</head>
+<body>
+    <div>
+        <h2>Js Topics</h2>
+        <div>
+            <h3>Conditions</h3>
+            <input type="text" name="ageCdn" id="ageCdn" onkeyup="ageCategory()"/>
+            <p id="ageCalcMsg"></p>
+            <script>
+                function ageCategory(){
+                    let ageCdn = Number(document.getElementById('ageCdn').value);
+                    let ageCalcMsg = document.getElementById('ageCalcMsg');
+                    let result = "";
+                    ageCalcMsg.innerHTML = result;
+
+                    if(ageCdn > 18 ){
+                        if(ageCdn > 60)
+                            result = "Senior Citizen";
+                        else
+                            result = "Major";
+                    }else if(ageCdn > 10){
+                        result = "Minor";
+                    }else if(ageCdn > 5){
+                        result = "Kid";
+                    }else if(ageCdn >= 0){
+                        result = "Kolanthai";
+                    }else{
+                        result = "Porakkavey ilada";
+                    }
+
+                    ageCalcMsg.innerHTML = result;
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
+            

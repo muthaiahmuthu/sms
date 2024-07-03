@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <body>
+        <div>
+            <h1>Add</h1>
+        
+        <div>
+             <input type="number" id="num1">
+             <input type="number" id="num2">
+        </div>
+        <div>
+            <input type="button" value="add" onclick="add()">
+            <input type="button" value="sub" onclick="sub()">
+            <input type="button" value="mul" onclick="mul()">
+            <input type="button" value="div" onclick="div()">
+        </div>
+       
+        <div>
+        <p id="oddevencalmsg">Ans:</p>
+    </div>
+    </div>
+
+        <script>
+            function add() {
+                let num1=Number(document.getElementById("num1").value);
+                let num2=Number(document.getElementById("num2").value);
+                sum=num1+num2;
+                result=sum;
+            
+                oddevencalmsg.innerHTML = result;
+    
+            }
+            function sub() {
+                let num1=Number(document.getElementById("num1").value);
+                let num2=Number(document.getElementById("num2").value);
+                sum=num1-num2;
+                result=sum;
+            
+                oddevencalmsg.innerHTML = result;
+            }
+            function mul() {
+                let num1=Number(document.getElementById("num1").value);
+                let num2=Number(document.getElementById("num2").value);
+                sum=num1*num2;
+                result=sum;
+            
+                oddevencalmsg.innerHTML = result;
+            }
+            function div() {
+                let num1=Number(document.getElementById("num1").value);
+                let num2=Number(document.getElementById("num2").value);
+                sum=num1/num2;
+                result=sum;
+            
+                oddevencalmsg.innerHTML = result;
+            }
+    </script>
+    
+    </body>
+
+</html>

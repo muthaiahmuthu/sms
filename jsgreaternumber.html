@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions</title>
+</head>
+<body style="background-color: darkgray;">
+
+    <div>
+        <h1 >If Conditions</h1>
+        <hr>3
+        <!-- //QUESTION1 -->
+    <div>
+        <h2>1.Greater Number?</h2>
+
+        <h3 >Number1:<input type="number" id="number1" ></h3>
+    </div>
+    <div>
+        <h3 >Number2:<input type="number" id="number2" ></h3>
+    </div>
+    <div>
+        <button type="submit" onclick="greaternumber()">submit</button>
+    </div>
+
+    <p id="greaterCalcMsg">Ans:</p>
+<hr>
+</div>
+<!-- //QUESTION2 -->
+<div>
+<h2>2.positive Number Negative Number ?</h2>
+
+<h4>Enter a Number:<input type="number" id="postivenumber" onkeyup="positiveornegative()"></h4>
+<p id="positivecalmsg">Ans:</p>
+
+</div>
+<hr>
+<!-- //QUESTION3 -->
+<div>
+    <h2>3.Odd Number Even Number?</h2>
+
+<h4>Enter a Number:<input type="number" id="evennumber" onkeyup="oddnumber()"></h4>
+<p id="evencalmsg">Ans:</p>
+</div>
+<hr>
+<!-- //QUESTION4 -->
+<div>
+    <h2>4.single digit or double or trible digit number?</h2>
+
+    <h4>Enter a Number:<input type="number" id="singledigit" onkeyup="doubledigit()"></h4>
+    <p id="triplecalmsg">Ans:</p>
+</div>
+<hr>
+<!-- //QUESTION5 -->
+
+<div>
+    <h2>5.mark to convert grade calculation?</h2>
+
+   <h4>Enter a Number: <input type="number" id="mark" onkeyup="grade()"></h4>
+    <p id="convertcalmsg">Ans:</p>
+</div>
+
+<hr>
+    <script>6
+    
+//QUESTION1
+        function greaternumber(){
+            let number1= Number(document.getElementById('number1').value);
+            let number2= Number(document.getElementById('number2').value);
+            let result = "";
+            greaterCalcMsg.innerHTML = result;
+
+            if(number1>number2 ){
+        
+                result = "number1 is greater ";
+                }
+                else if(number1<number2){
+                result = "number2 is greater";
+                }
+                else if(number1=number2){
+                result = "number1 and number2 equal";
+                }
+                greaterCalcMsg.innerHTML = result;
+                     
+        }
+   
+//QUESTION2
+
+        function positiveornegative() {
+            let numberType= Number(document.getElementById('postivenumber').value);
+
+            let result = "";
+            positivecalmsg.innerHTML = result;
+
+            if(numberType>0) {
+                result = "positive number";
+            }else{
+                result = "negative number";
+                }
+                positivecalmsg.innerHTML = result;
+
+
+        }
+
+//QUESTION3
+function oddnumber() {
+            let numberType=Number(document.getElementById('evennumber').value);
+
+            let result = "";
+            evencalmsg.innerHTML = result;
+
+            if(numberType%2===0) {
+                result = "even number";
+            }
+            else{
+                result = "odd number";
+                }
+                evencalmsg.innerHTML = result;
+            }
+
+
+//QUESTION4
+function doubledigit() {
+            let numberType=(document.getElementById('singledigit').value);
+
+            let result = "";
+            triplecalmsg.innerHTML = result;
+
+            if(numberType.length==1) {
+                result = "single digit";
+            }
+
+            else if(numberType.length==2){
+                result = "double digit";
+                }
+            else if (numberType.length==3){
+                result= "trible digit"
+            }    
+                
+                triplecalmsg.innerHTML = result;
+            }
+
+//QUESTION5
+function grade() {
+            let numberType=(document.getElementById('mark').value);
+
+            let result = "";
+            convertcalmsg.innerHTML = result;
+
+            if(numberType>90 && numberType<=100) {
+                result = "gradeA";
+            }
+            else if(numberType>80 && numberType<=90){
+                result = "gradeB";
+                }
+            else if (numberType>70 && numberType<=80){
+                result= "gradeC";
+            }
+            else if (numberType>60 && numberType<70){
+                result= "gradeD";
+            }    
+             else if (numberType>50 && numberType<60){
+                result= "gradeE";
+            }     
+            else if (numberType>0 && numberType<50){
+                result= "FAIL"
+            }    
+                convertcalmsg.innerHTML = result;
+         }
+
+</script>
+
+
+</body>    
+
+</body>
+</html>
